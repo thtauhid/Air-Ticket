@@ -42,6 +42,10 @@ public class One {
 	private JLabel lblFlightData;
 	private JPanel panel_1;
 	private JDateChooser dateChooser;
+	private JTable table;
+	private JLabel lblNewLabel_6;
+	private JLabel lblNewLabel;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -64,6 +68,14 @@ public class One {
 	 */
 	public One() {
 		initialize();
+	}
+	
+	
+	public void switch_panel(JPanel p) {
+		layeredPane.removeAll();
+		layeredPane.add(p);
+		layeredPane.repaint();
+		layeredPane.revalidate();
 	}
 
 	/**
@@ -105,6 +117,25 @@ public class One {
 		layeredPane.setBounds(6, 59, 788, 357);
 		frame.getContentPane().add(layeredPane);
 		layeredPane.setLayout(null);
+		
+		JPanel welcome_panel = new JPanel();
+		welcome_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		welcome_panel.setBackground(Color.WHITE);
+		welcome_panel.setBounds(0, 0, 788, 357);
+		layeredPane.add(welcome_panel);
+		welcome_panel.setLayout(null);
+		
+		JLabel lblWelcomeScreen = new JLabel("Welcome to Air Ticket Managemy System");
+		lblWelcomeScreen.setFont(new Font("Kokonor", Font.BOLD | Font.ITALIC, 28));
+		lblWelcomeScreen.setHorizontalAlignment(SwingConstants.CENTER);
+		lblWelcomeScreen.setBounds(0, 0, 788, 297);
+		welcome_panel.add(lblWelcomeScreen);
+		
+		JLabel lblWelcomeScreenInstruction = new JLabel("Select any option from above to get started");
+		lblWelcomeScreenInstruction.setFont(new Font("Lao MN", Font.ITALIC, 20));
+		lblWelcomeScreenInstruction.setHorizontalAlignment(SwingConstants.CENTER);
+		lblWelcomeScreenInstruction.setBounds(0, 66, 788, 291);
+		welcome_panel.add(lblWelcomeScreenInstruction);
 		
 		search_panel = new JPanel();
 		search_panel.setBounds(0, 0, 788, 357);
@@ -262,36 +293,6 @@ public class One {
 		JCheckBox chckbxNewCheckBox = new JCheckBox("I am authorized to view the booking.");
 		chckbxNewCheckBox.setBounds(83, 92, 264, 23);
 		lookup_panel.add(chckbxNewCheckBox);
-		
-		JPanel welcome_panel = new JPanel();
-		welcome_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		welcome_panel.setBackground(Color.WHITE);
-		welcome_panel.setBounds(0, 0, 788, 357);
-		layeredPane.add(welcome_panel);
-		welcome_panel.setLayout(null);
-		
-		JLabel lblWelcomeScreen = new JLabel("Welcome to Air Ticket Managemy System");
-		lblWelcomeScreen.setFont(new Font("Kokonor", Font.BOLD | Font.ITALIC, 28));
-		lblWelcomeScreen.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcomeScreen.setBounds(0, 0, 788, 297);
-		welcome_panel.add(lblWelcomeScreen);
-		
-		JLabel lblWelcomeScreenInstruction = new JLabel("Select any option from above to get started");
-		lblWelcomeScreenInstruction.setFont(new Font("Lao MN", Font.ITALIC, 20));
-		lblWelcomeScreenInstruction.setHorizontalAlignment(SwingConstants.CENTER);
-		lblWelcomeScreenInstruction.setBounds(0, 66, 788, 291);
-		welcome_panel.add(lblWelcomeScreenInstruction);
 	}
 	
-	public void switch_panel(JPanel p) {
-		layeredPane.removeAll();
-		layeredPane.add(p);
-		layeredPane.repaint();
-		layeredPane.revalidate();
-	}
-	
-	private JTable table;
-	private JLabel lblNewLabel_6;
-	private JLabel lblNewLabel;
-	private JTextField textField;
 }
